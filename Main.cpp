@@ -10,7 +10,7 @@ int main(void) {
 	Car car3;
 
 	car1.AboutCar(car1);
-	car2.AboutCar(car2);
+	car2.AboutCar(car2); 
 	car3.AboutCar(car3);
 
 	cout << "\nThere are cars on parking: " << endl;
