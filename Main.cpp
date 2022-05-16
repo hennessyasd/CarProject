@@ -14,10 +14,13 @@ int main(void) {
 	car3.AboutCar(car3);
 
 	cout << "\nThere are cars on parking: " << endl;
-	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 	cout << car1.getInfo() << endl;
 	cout << car2.getInfo() << endl;
 	cout << car3.getInfo() << endl;
-	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
+	cout << "Id " << car1.getModel() << "is: " << car1.getId() << endl;
+	cout << "Id " << car2.getModel() << "is: " << car2.getId() << endl;
+	cout << "Id " << car3.getModel() << "is: " << car3.getId() << endl;
+	cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << endl;
 	return 0;
 }

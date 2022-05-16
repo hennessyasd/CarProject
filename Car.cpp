@@ -1,7 +1,23 @@
 ﻿#include "Car.h"
 
+
+int Car::randomId() {
+	srand(time(0));
+	long long r = rand() % 10000000;
+	return r;
+};
+
+
+
+int Car::countCars = 0;
+
+int Car::getCountCars() {
+	return countCars;
+}
+
 // default constructor - конструктор по умолчанию
 Car::Car() {
+	countCars++;
 	brand = "no brand";
 	model = "no model";
 	age = 0;
@@ -10,6 +26,7 @@ Car::Car() {
 
 // constructor with params #1 - конструктор c параметрами
 Car::Car(string brand, string model) {
+	countCars++;
 	this->brand = brand;
 	this->model = model;
 	age = 0;
@@ -17,16 +34,17 @@ Car::Car(string brand, string model) {
 }
 
 // constructor with params #2 - конструктор c параметрами
-Car::Car(string brand, string model, int age, double price) {
+Car::Car(string brand, string model, int age, double price, int uniqueId) {
 	this->brand = brand;
 	this->model = model;
 	this->age = age;
 	this->price = price;
+	this->uniqueId = randomId();
 }
 
 // destructor - деструктор
 Car::~Car() {
-
+	countCars--;
 }
 
 string Car::getBrand() {
@@ -61,6 +79,10 @@ void Car::setPrice(double price) {
 	this->price = price;
 }
 
+int Car::getId() {
+	return uniqueId;
+};
+
 void Car::AboutCar(Car car) {
 	// введите марку автопроизводителя
 	cout << "Input brand of your car: ";
@@ -92,5 +114,6 @@ string Car::getInfo() {
 		+ "; model = " + model
 		+ "; age = " + to_string(age)
 		+ "; price = " + to_string(price)
+		+ "; unique identifier: " + to_string(uniqueId)
 		+ "\n";
 }
